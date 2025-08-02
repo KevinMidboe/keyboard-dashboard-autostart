@@ -1,0 +1,14 @@
+[Unit]
+Description=Keyboard autostart service
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5s
+ExecStart=/opt/keyboard-autostart/env/bin/python3 -u /opt/keyboard-autostart/main.py
+
+[Install]
+WantedBy=multi-user.target
+RequiredBy=network.target
+

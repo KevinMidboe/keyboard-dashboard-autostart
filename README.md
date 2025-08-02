@@ -48,4 +48,18 @@ Install python dependencies:
 pip3 install -r requirements.txt
 ```
 
+## Setup systemd service
 
+Copy the systemd template & activate it:
+
+```bash
+(sudo) cp templates/keyboard-autostart.service /etc/systemd/system/
+(sudo) systemctl enable keyboard-autostart.service
+(sudo) systemctl start keyboard-autostart.service
+```
+
+### View application logs
+
+```
+(sudo) journalctl -u keyboard-autostart.service
+```
